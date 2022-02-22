@@ -1,2 +1,1 @@
-# Lecture2
-image restoration
+# Lecture2 - IMAGE RESTAURATION
