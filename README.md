@@ -1,4 +1,4 @@
-# Lecture2 - IMAGE RESTAURATION
+# Lecture2 - IMAGE RESTORATION
 
 ## Preparation
 
