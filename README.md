@@ -19,9 +19,9 @@
 
 ### First task – experimentally defined PSF – NON-BLIND deconvolution
 
-1. Estimate experimentally direction in which the object is moving and design an unknown PSF of degrading linear system. Try to create PSFs as much precise as possible considering both angular orientation, shape and length of the motion blur. Consider that the matrix must be of size 45x45 pixels. The sum of PSF values has to be equal to 1.
+1. Estimate experimentally direction in which the object is moving and design an unknown PSF of degrading linear system. Try to create PSF as much precise as possible considering both angular orientation, shape and length of the motion blur. Consider that the matrix must be of size 477x477 pixels. The sum of PSF values has to be equal to 1.
 
-2. Apply any of deconvolution methods on the blurred images using the experimentally designed PSFs. You can choose an arbitrary “non-blind” deconvolution method (e.g. inverse filter, Wiener filter, Richardson-Lucy deconvolution, Total Variation deconvolution or their modifications). Visually evaluate the result and adapt the PSFs to get the sufficient output.
+2. Apply any of deconvolution methods on the blurred image using the experimentally designed PSF. You can choose an arbitrary “non-blind” deconvolution method (e.g. inverse filter, Wiener filter, Richardson-Lucy deconvolution, Total Variation deconvolution or their modifications). Visually evaluate the result and adapt the PSF to get the sufficient output.
 
 Tip:
 * Segment the moving object and perform image fusion of the sharp background from the input image and the deblurred moving object in order to get sharp image. You can choose an arbitrary method to fuse the images.
@@ -29,7 +29,7 @@ Tip:
 Evaluation:
 Use the provided MATLAB function for evaluation of the results and submit the output to lecturer. The function *evaluateMotion.p* called as:
 
-`[deltaPSF,deltaImage,PSNR] = evaluateMotion(deblurredImage,estimatedPSF)`,
+`[deltaPSF,deltaPSNR] = evaluateMotion(deblurredPathName)`,
 
 which has the following inputs and outputs:
 * deblurredImage (the final output of your algorithm – restored image),
