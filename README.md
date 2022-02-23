@@ -35,7 +35,7 @@ which has the following inputs and outputs:
 * deblurredPathName (full path including name of the .mat file – two variables inside: estimatedPSF and deblurredImage),
   * estimatedPSF (designed/estimated PSF of the degrading system – 477x477, double, sum = 1),
   * deblurredImage (deblurred image – original image size, uint8, RGB),
-* deltaPSF (relative difference between true and estimated PSF – lower is better),
+* deltaPSF (Root Mean Squre Error between true and estimated PSF – lower is better),
 * PSNR (PSNR value of the estimated image – higher is better).
 
 5. Calculate above-mentioned evaluation criteria. Save one **TIFF** image as a joined figure consisted of 2 subfigures showing the best achieved results of reconstruction method and PSF designed image (also with evaluation criteria values). **Push** your program script into GitHub repository **Lecture2** using the **branch of your team** (stage changed -> fill commit message -> sign off -> commit -> push -> select *NAME_OF_YOUR_TEAM* branch -> push -> manager-core -> web browser -> fill your credentials).
