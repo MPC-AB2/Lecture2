@@ -29,13 +29,13 @@ Tip:
 Evaluation:
 Use the provided MATLAB function for evaluation of the results and submit the output to lecturer. The function *evaluateMotion.p* called as:
 
-`[deltaPSF,deltaPSNR] = evaluateMotion(deblurredPathName)`,
+`[deltaPSF, PSNR] = evaluateMotion(deblurredPathName)`,
 
 which has the following inputs and outputs:
-* deblurredImage (the final output of your algorithm – restored image),
-* estimatedPSF (designed/estimated PSF of the degrading system),
-* deltaPSF (difference between true and estimated PSF – lower is better),
-* deltaIMG (difference of true and estimated deblurred image – lower is better),
+* deblurredPathName (full path including name of the .mat file - two variables inside: estimatedPSF and deblurredImage),
+* estimatedPSF (designed/estimated PSF of the degrading system - 477x477, double, sum = 1),
+* deblurredImage (deblurred image - original image size, uint8, RGB),
+* deltaPSF (relative difference between true and estimated PSF – lower is better),
 * PSNR (PSNR value of the estimated image – higher is better).
 
 ### Second task – automatically estimated PSF – BLIND deconvolution
