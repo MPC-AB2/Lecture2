@@ -1,0 +1,12 @@
+# MPC-AB2 Lecture2 image restauration
+
+*.mat
+*.jpg
+*.jpeg
+*.png
+*.npy
+*.asv
+*.db
+
+.idea
+.ipynb_checkpoints
