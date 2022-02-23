@@ -38,7 +38,7 @@ which has the following inputs and outputs:
 * deltaIMG (difference of true and estimated deblurred image – lower is better),
 * PSNR (PSNR value of the estimated image – higher is better).
 
-### Second task – automatically defined PSF – BLIND deconvolution
+### Second task – automatically estimated PSF – BLIND deconvolution
 
 Search for an arbitrary blind deconvolution method and use this method to estimate an unknown PSF of the degrading linear system. Apply the same steps as before using the estimated PSF instead of the experimentally designed one. Compare the results and submit the output to lecturer.
 
