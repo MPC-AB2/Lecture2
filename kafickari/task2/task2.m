@@ -3,19 +3,19 @@ load('maska_new.mat');
 
 
 psf = zeros(477);
-psf(239, 239) = 1;
+psf = fspecial('gaussian', [477 477], 5);
 imshow(psf, [])
 
 
 img = im2double(img);
 for i = 1:3
-img_filt(:,:,i) = wiener2(img(:,:,i),[20 20]);
+img_filt(:,:,i) = wiener2(img(:,:,i),[12 12]);
 
 
 
 end
 %%
-[img_2, psf_est] = deconvblind(img_filt, psf);
+[img_2, psf_est] = deconvblind(img_filt, psf, 5);
 
 imshow(img_2, [])
 %%
@@ -66,12 +66,13 @@ end
 
 
 %%
+
 figure
 subplot 121
 imshow(fuse)
 subplot 122
-imshow(psf_est, [])
-title('NRMSE PSF = 0.2982; RMSE Image =4.8455; PSNR = 24.7570')
+imshow(psf, [])
+title('NRMSE PSF = 0.0251; RMSE Image = 4.7778; PSNR = 24.8308')
 
 estimatedPSF = psf_est;
 
