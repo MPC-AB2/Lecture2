@@ -9,7 +9,7 @@ imshow(psf, [])
 
 img = im2double(img);
 for i = 1:3
-img_filt(:,:,i) = wiener2(img(:,:,i),[20 20]);
+img_filt(:,:,i) = wiener2(img(:,:,i),[12 12]);
 
 
 
