@@ -19,7 +19,7 @@
 
 ### First task – experimentally defined PSF – NON-BLIND deconvolution
 
-1. Download the image in a zip folder from [here](https://www.vut.cz/www_base/vutdisk.php?i=284634ab51). Extract the content of the zip folder into **Lecture2** folder. The zip folder contains an encrypted ground truht image and PSF (*GTencr.mat* or *GTencr.npz*) and the blurred version (*image_blurred.png*).
+1. Download the image in a zip folder from [here](https://www.vut.cz/www_base/vutdisk.php?i=284634ab51). Extract the content of the zip folder into **Lecture2** folder. The zip folder contains an encrypted ground truht image and PSF (*GTencr.mat* for MATLAB or *GTencr.npz* for Python) and the blurred version (*image_blurred.png*).
 2. Make a script in **Lecture2\NAME_OF_YOUR_TEAM\TASK1** folder to estimate experimentally direction in which the object is moving and design an unknown PSF of degrading linear system. Try to create PSF as much precise as possible considering both angular orientation, shape and length of the motion blur. Consider that the matrix must be of size 477x477 pixels. The sum of PSF values has to be equal to 1.
 3. Apply any of deconvolution methods on the blurred image using the experimentally designed PSF. You can choose an arbitrary “non-blind” deconvolution method (e.g. inverse filter, Wiener filter, Richardson-Lucy deconvolution, Total Variation deconvolution or their modifications). Visually evaluate the result and adapt the PSF to get the sufficient output.
 
@@ -29,13 +29,14 @@ Tip:
 4. Evaluation:
 Use the provided MATLAB function for evaluation of the results and submit the output to lecturer. The function *evaluateMotion.p* called as:
 
-`[deltaPSF, PSNR] = evaluateMotion(deblurredPathName)`,
+`[NRMSE_PSF, RMSE_Image, PSNR] = evaluateMotion(deblurredPathName)`,
 
 which has the following inputs and outputs:
-* deblurredPathName (full path including name of the .mat file – two variables inside: estimatedPSF and deblurredImage),
+* deblurredPathName (full path including name of the .mat/.npz file – two variables inside: estimatedPSF and deblurredImage),
   * estimatedPSF (designed/estimated PSF of the degrading system – 477x477, double/float64, sum = 1),
   * deblurredImage (deblurred image – original image size, uint8, RGB),
-* deltaPSF (Root Mean Squre Error between true and estimated PSF – lower is better),
+* NRMSE_PSF (Normalized Root Mean Squre Error between true and estimated PSF – lower is better),
+* RMSE_Image (Root Mean Square Error between true and deblurred image - lower is better)
 * PSNR (PSNR value of the estimated image – higher is better).
 
 5. Calculate above-mentioned evaluation criteria. Save one **TIFF** image as a joined figure consisted of 2 subfigures showing the best achieved results of reconstruction method and PSF designed image (also with evaluation criteria values). **Push** your program script into GitHub repository **Lecture2** using the **branch of your team** (stage changed -> fill commit message -> sign off -> commit -> push -> select *NAME_OF_YOUR_TEAM* branch -> push -> manager-core -> web browser -> fill your credentials).
@@ -48,4 +49,4 @@ which has the following inputs and outputs:
 3. Save one **TIFF** image as a joined figure consisted of 2 subfigures showing the best achieved results of reconstruction method and PSF designed image (also with evaluation criteria values). **Push** your program script into GitHub repository **Lecture2** using the **branch of your team** (stage changed -> fill commit message -> sign off -> commit -> push -> select *NAME_OF_YOUR_TEAM* branch -> push -> manager-core -> web browser -> fill your credentials).
 4. Submit the best-obtained result of your method evaluated on the competition dataset using the evaluation function (i.e. submit the calculated evaluation values) into a shared [Excel table](https://docs.google.com/spreadsheets/d/1Dcqqtwp8hEBAzghURJAHd9Jq7d0nSY__/edit?usp=sharing&ouid=112211468254352441667&rtpof=true&sd=true). The evaluation of results from each team will be presented at the end of the lecture.
 
-The output of the Challenge will be four evaluating values – two for each of two approaches (experimentally determined PSF and obtained by some of blind methods).
+The output of the Challenge will be six evaluating values – three for each of two approaches (experimentally determined PSF and obtained by some of blind methods).
