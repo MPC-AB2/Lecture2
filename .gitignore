@@ -7,6 +7,7 @@
 *.npy
 *.asv
 *.db
+*.npz
 
 .idea
 .ipynb_checkpoints
