@@ -37,6 +37,7 @@ wnr2 = deconvwnr(obr, PSF, y);
 
 
 %% SPOJENI obr
+obr = imnlmfilt(obr);
 vysl_obr = zeros(size(obr));
 
 for i=1:3
