@@ -1,5 +1,7 @@
 # Lecture2 - IMAGE RESTORATION
 
+[**Benchmark Results**](https://moodle.vut.cz/pluginfile.php/403660/mod_resource/content/1/Lecture2_BenchmarkRestoration.pdf)
+
 ## Preparation
 
 1. Run Git bash.
