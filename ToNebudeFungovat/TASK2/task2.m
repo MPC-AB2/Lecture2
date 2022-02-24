@@ -11,8 +11,9 @@ BW = imgaussfilt(double(BW1),sigma);
 
 
 
-psfi = fspecial('motion',175,90); 
-[J,psfr] = deconvblind(rgb2gray(obr),psfi);
+psfi = zeros(477);
+psfi([200:300],238 )=1;
+[J,psfr] = deconvblind(im2double(rgb2gray(obr)),psfi,10,0,BW);
 
 vel = 477;
 f = psfr;
